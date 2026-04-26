@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hitung Saldo Tabungan</title>
+</head>
+<body>
+
+<h2>Perhitungan Saldo Tabungan</h2>
+
+<form onsubmit="hitungSaldo(event)">
+    <label>Saldo Awal:</label><br>
+    <input type="number" id="saldo" required><br><br>
+
+    <label>Bunga (%):</label><br>
+    <input type="number" id="bunga" required><br><br>
+
+    <label>Waktu (bulan):</label><br>
+    <input type="number" id="waktu" required><br><br>
+
+    <button type="submit">Hitung</button>
+    <button type="reset">Reset</button>
+</form>
+
+<h3>Hasil:</h3>
+<div id="hasil"></div>
+
+<script>
+function hitungSaldo(event) {
+    event.preventDefault();
+
+    let saldo = parseFloat(document.getElementById("saldo").value);
+    let bunga = parseFloat(document.getElementById("bunga").value) / 100;
+    let waktu = parseInt(document.getElementById("waktu").value);
+
+    let hasil = "";
+
+    for (let i = 1; i <= waktu; i++) {
+        saldo = saldo + (saldo * bunga);
+        hasil += "Saldo Bulan " + i + " = Rp. " + saldo.toFixed(0) + "<br>";
+    }
+
+    document.getElementById("hasil").innerHTML = hasil;
+}
+</script>
+
+</body>
+</html>

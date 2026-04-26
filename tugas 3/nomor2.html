@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel IBIK Abadi</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        td {
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Form Pemesanan Tiket Travel IBIK Abadi</h2>
+
+<form onsubmit="hitung(event)">
+<table border="1">
+    <tr>
+        <td>Nama Pemesan</td>
+        <td><input type="text" id="nama" required></td>
+    </tr>
+    <tr>
+        <td>Tujuan</td>
+        <td>
+            <select id="tujuan">
+                <option value="jakarta">Jakarta</option>
+                <option value="solo">Solo</option>
+                <option value="surabaya">Surabaya</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Kelas</td>
+        <td>
+            <select id="kelas">
+                <option value="eksekutif">Eksekutif</option>
+                <option value="bisnis">Bisnis</option>
+                <option value="ekonomi">Ekonomi</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Banyak Tiket</td>
+        <td><input type="number" id="jumlah" required></td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td>
+            <input type="radio" name="member" value="member"> Member
+            <input type="radio" name="member" value="non"> Non Member
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <button type="submit">Hitung</button>
+            <button type="reset">Reset</button>
+        </td>
+    </tr>
+</table>
+</form>
+
+<h3>Hasil:</h3>
+<p>Harga Tiket: <span id="harga"></span></p>
+<p>Subtotal: <span id="subtotal"></span></p>
+<p>Diskon: <span id="diskon"></span></p>
+<p>Total Bayar: <span id="total"></span></p>
+
+<script>
+function hitung(event) {
+    event.preventDefault();
+
+    let tujuan = document.getElementById("tujuan").value;
+    let kelas = document.getElementById("kelas").value;
+    let jumlah = parseInt(document.getElementById("jumlah").value);
+    let member = document.querySelector('input[name="member"]:checked');
+
+    let harga = 0;
+
+    // Harga berdasarkan tujuan & kelas
+    if (tujuan === "jakarta") {
+        if (kelas === "eksekutif") harga = 70000;
+        else if (kelas === "bisnis") harga = 40000;
+        else harga = 10000;
+    } else if (tujuan === "solo") {
+        if (kelas === "eksekutif") harga = 80000;
+        else if (kelas === "bisnis") harga = 50000;
+        else harga = 20000;
+    } else if (tujuan === "surabaya") {
+        if (kelas === "eksekutif") harga = 90000;
+        else if (kelas === "bisnis") harga = 60000;
+        else harga = 30000;
+    }
+
+    let subtotal = harga * jumlah;
+    let diskon = 0;
+
+    if (member && member.value === "member") {
+        diskon = subtotal * 0.1;
+    }
+
+    let total = subtotal - diskon;
+
+    // Output
+    document.getElementById("harga").innerText = "Rp " + harga;
+    document.getElementById("subtotal").innerText = "Rp " + subtotal;
+    document.getElementById("diskon").innerText = "Rp " + diskon;
+    document.getElementById("total").innerText = "Rp " + total;
+}
+</script>
+
+</body>
+</html>

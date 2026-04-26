@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nomor2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            display: flex;
+            gap: 20px;
+            background: white;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 300px;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content h2 {
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column;
+            }
+
+            .card img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Daftar Hewan Dilindungi</h1>
+
+        <div class="card">
+            <img src="./foto/orang utan.png" alt="Orang Utan">
+            <div class="content">
+                <h2>Orang Utan</h2>
+                <p>
+                    Orang utan dicirikan oleh rambut di seluruh badannya yang berwarna
+                    kemerahan. Satwa ini merupakan mamalia arboreal terbesar yang
+                    menghabiskan hampir seluruh waktunya di pepohonan. Lengannya yang
+                    panjang dan kuat serta tangan dan kakinya dapat mencengkeram erat.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="./foto/kera emas.jpg" alt="Kera Emas">
+            <div class="content">
+                <h2>Kera Emas</h2>
+                <p>
+                    Kera emas dikenal sebagai hewan yang memiliki kemampuan adaptasi
+                    sangat baik terhadap lingkungan bersuhu dingin. Umumnya, monyet
+                    berhidung pesek dengan rambut emas ini tinggal di hutan pegunungan.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="./foto/cendrawasih.jpg" alt="Burung Cendrawasih">
+            <div class="content">
+                <h2>Burung Cendrawasih</h2>
+                <p>
+                    Burung cendrawasih termasuk hewan langka yang hanya dapat ditemukan
+                    di Papua. Burung ini memiliki bulu yang indah sehingga sering menjadi
+                    sasaran perburuan liar untuk diperjualbelikan.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Martin Caesar Partogi | 242310034</p>
+    </footer>
+
+</body>
+</html>
